@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "mybri-prototype",
-    "description": "An empty new project",
+    "name": "myBRI",
+    "description": "myBRI prototype app",
     "slug": "mybri-prototype",
     "privacy": "public",
     "sdkVersion": "19.0.0",

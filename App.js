@@ -1,21 +1,28 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import {TabNavigator} from 'react-navigation'
+import {SplashScreen, LoginScreen} from './Screens'
 
 export default class App extends React.Component {
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text>Open up App.js to start working on your app!</Text>
-      </View>
-    );
-  }
+    render() {
+        const MainNavigator = TabNavigator({
+                splash: {screen: SplashScreen},
+                login: {screen: LoginScreen},
+            },
+            {
+                // lazy property, to render one by one tab navigator screen when the screen is opened
+                lazy: false,
+                backBehavior: 'none',
+                swipeEnabled: false,
+                initialRouteName: 'splash',
+                navigationOptions: {
+                    tabBarVisible: false
+                },
+            }
+        );
+        return (
+            <MainNavigator/>
+        );
+    }
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+
